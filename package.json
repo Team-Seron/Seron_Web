@@ -7,11 +7,20 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "svgr": "npx @svgr/cli -d src/assets/svg --ignore-existing --typescript --no-dimensions public/svg"
   },
   "dependencies": {
+    "@emotion/styled": "^11.11.0",
+    "@types/styled-components": "^5.1.26",
+    "@vitejs/plugin-react-swc": "^3.3.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2",
+    "scss": "^0.2.4",
+    "styled-components": "^6.0.5",
+    "vite-plugin-svgr": "^3.2.0",
+    "vite-tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",
