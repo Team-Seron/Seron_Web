@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import Modal from "./Modal";
 
 function Body() {
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const handleOpen = () => {
     setModalOpen(true);
   };
