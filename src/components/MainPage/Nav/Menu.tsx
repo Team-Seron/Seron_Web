@@ -24,6 +24,7 @@ const Category = styled.div`
   font-weight: 500;
   color: #000000;
   cursor: pointer;
+  min-width: fit-content;
 `;
 
 export default Menu;
