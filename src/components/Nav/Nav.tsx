@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Menu from "./Menu";
-import SvgSearonLogo from "../../../assets/svg/SearonLogo";
+import SvgSearonLogo from "../../assets/svg/SearonLogo";
 import { useNavigate } from "react-router-dom";
 
 function Nav() {

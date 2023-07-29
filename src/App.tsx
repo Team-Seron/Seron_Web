@@ -1,9 +1,8 @@
 import React from "react";
-import MainPage from "./components/MainPage/MainPage";
+import MainPage from "./pages/MainPage";
 import { Routes, Route } from "react-router-dom";
-import DebatePage from "./components/DebatePage/DebatePage";
-import PicturePage from "./components/PicturePage/PicturePage";
-import { GlobalStyle } from "../GlobalStyle";
+import DebatePage from "./pages/Debate/DebatePage";
+import PicturePage from "./pages/Picture/PicturePage";
 
 function App() {
   return (
