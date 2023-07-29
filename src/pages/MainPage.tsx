@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "./Nav/Nav";
-import Body from "./Body/Body";
+import Nav from "../components/Nav/Nav";
+import Body from "../components/Body/Body";
 
 function MainPage() {
   return (

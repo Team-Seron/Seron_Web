@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../MainPage/Nav/Nav";
+import Nav from "../../components/Nav/Nav";
 
 function PicturePage() {
   return (
