@@ -19,7 +19,7 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag your-dockerhub-username/your-image-name:latest
+      run: docker build . --file Dockerfile --tag gunho30811/SEARON-WEB:latest
 
     - name: Push the Docker image
-      run: docker push your-dockerhub-username/your-image-name:latest
+      run: docker push gunho30811/SEARON-WEB:latest
