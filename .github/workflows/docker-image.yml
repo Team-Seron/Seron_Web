@@ -23,3 +23,10 @@ jobs:
 
     - name: Push the Docker image
       run: docker push gunho30811/searon-web:latest
+
+    - name: Dispatch deploy event
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        repository: ${{ github.repository }}
+        event-type: deploy

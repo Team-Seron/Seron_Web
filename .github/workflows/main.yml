@@ -1,9 +1,8 @@
 name: Deploy to production server
 
 on:
-  push:
-    branches:
-      - main
+  repository_dispatch:
+    types: [deploy]
 
 jobs:
   deploy:
