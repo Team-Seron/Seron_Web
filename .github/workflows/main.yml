@@ -19,4 +19,5 @@ jobs:
         script: |
           docker pull gunho30811/searon-web:latest
           docker stop peaceful_joliot || true
+          docker rm peaceful_joliot || true
           docker run --name peaceful_joliot -d -p 80:3000 gunho30811/searon-web:latest
