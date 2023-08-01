@@ -12,7 +12,7 @@ function Body() {
     <div>
       <Section>
         <h1>
-          토론의 즐거움을 세론과 함께하세요 !<br /> TEST에게 기회를
+          토론의 즐거움을 세론과 함께하세요 !<br /> 모두에게 기회를
         </h1>
         <Button onClick={handleOpen}>10기 모집 알림 신청하기</Button>
         {modalOpen && <Modal setModalOpen={setModalOpen} />}
