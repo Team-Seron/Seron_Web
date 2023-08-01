@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ CICD_Test ]
+    branches: [ main ]
 
 jobs:
   build:
