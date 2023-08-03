@@ -1,34 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 import Menu from "./Menu";
-import SvgSearonLogo from "../../assets/svg/SearonLogo";
 import { useNavigate } from "react-router-dom";
+import SvgSLogo from "../../assets/svg/SLogo";
+import SvgSearonLogo from "../../assets/svg/SearonLogo";
 
 function Nav() {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        height: "72px",
-        color: "black",
-        fontSize: "24px",
-        fontWeight: "bold",
-        fontFamily: "pretendard",
-        display: "flex",
-        gap: "24px",
-        alignItems: "center",
-        padding: "0 142px",
-        justifyContent: "space-between",
-        borderBottom: "1px solid #E5E5E5",
-      }}
-    >
+    <NavWrapper>
       <Icon onClick={() => navigate("/")}>
         <SvgSearonLogo />
       </Icon>
       <Menu />
-    </div>
+    </NavWrapper>
   );
 }
+
+const NavWrapper = styled.div`
+  height: 72px;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: pretendard;
+  display: flex;
+  align-items: center;
+  gap: 650px;
+  justify-content: center;
+  border-bottom: 1px solid #e5e5e5;
+`;
 
 const Icon = styled.div`
   justify-content: center;
