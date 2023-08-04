@@ -23,7 +23,7 @@ function Accordion({ title, content }: Props) {
         parentRef.current.style.height = "0";
         parentRef.current.style.background = "white";
       } else {
-        parentRef.current.style.height = `${childRef.current.clientHeight}px`;
+        parentRef.current.style.height = `${childRef.current.clientHeight}px `;
         parentRef.current.style.background = "lightgray";
       }
       setIsCollapse(!isCollapse);
@@ -39,11 +39,11 @@ function Accordion({ title, content }: Props) {
     <>
       <Container>
         <Header onClick={handleButtonClick}>
-          {title}
+          Q : {title}
           <Button>{buttonText}</Button>
         </Header>
         <ContentsWrapper ref={parentRef}>
-          <Contents ref={childRef}>{content}</Contents>
+          <Contents ref={childRef}> A : {content}</Contents>
         </ContentsWrapper>
       </Container>
     </>
@@ -57,12 +57,12 @@ const Container = styled.div`
   justify-content: center;
   border-radius: 4px;
   border: 1px solid silver;
+  font-size: 20px;
   min-width: 300px;
-  width: 90vw;
+  width: 60vw;
   margin: 0 0 16px 0;
-  padding: 8px;
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     transition: transform 0s ease;
   }
 `;
@@ -71,6 +71,7 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  padding: 10px;
 
   height: 32px;
   margin: 0 32px 0 8px;
@@ -92,7 +93,7 @@ const ContentsWrapper = styled.div`
 `;
 
 const Contents = styled.div`
-  padding: 0.1px;
+  padding: 10px;
 `;
 
 export default Accordion;
