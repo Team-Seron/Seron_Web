@@ -1,7 +1,8 @@
 import React from "react";
 import Intro from "./Intro";
 import { styled } from "styled-components";
-import FAQ from "./FAQ";
+import Accordion from "./Accordion";
+import { FAQs } from "../../../public/data/FAQ";
 
 function Body() {
   return (
@@ -10,11 +11,25 @@ function Body() {
         <Intro />
       </Section>
       <Section>
-        <FAQ />
+        <Title>자주 묻는 질문</Title>
+
+        {FAQs.map((qna) => (
+          <div key={qna.id}>
+            <Accordion title={qna.question} content={qna.answer} />
+          </div>
+        ))}
       </Section>
     </>
   );
 }
+
+const Title = styled.div`
+  font-size: 44px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+`;
 
 const Section = styled.section`
   height: 500px;
