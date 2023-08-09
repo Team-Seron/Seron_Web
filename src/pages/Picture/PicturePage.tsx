@@ -5,7 +5,6 @@ import { Card, CardContent, CardMedia, Grid, Pagination } from "@mui/material";
 function PicturePage() {
   return (
     <div>
-      <Nav />
       <div style={{ margin: '100px'}}>
         <div style={{ display: 'flex', justifyContent: 'center'}}>
           <h1>활동사진</h1>
