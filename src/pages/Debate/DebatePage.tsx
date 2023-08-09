@@ -4,7 +4,6 @@ import Nav from "../../components/Nav/Nav";
 function DebatePage() {
   return (
     <>
-      <Nav />
       <div>토론젝트 페이지입니다</div>
     </>
   );
