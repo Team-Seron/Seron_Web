@@ -33,7 +33,7 @@ function Modal({ setModalOpen }: ModalProps) {
               alt="cancelIcon"
               width="16px"
               height="16px"
-            ></img>
+            />
           </CloseModal>
         </Header>
         <SubTitle>
@@ -163,8 +163,7 @@ const CloseModal = styled.div`
   position: absolute;
   right: 2rem;
   top: 20px;
-  width: 30px;
-  height: 30px;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
