@@ -3,6 +3,13 @@ import Intro from "./Intro";
 import { styled } from "styled-components";
 import Accordion from "./Accordion";
 import { FAQs } from "../../../public/data/FAQ";
+import MuiAccordion from "./MuiAccordion";
+
+type qnatype = {
+  id: number;
+  question: string;
+  answer: string;
+};
 
 function Body() {
   return (
@@ -12,8 +19,8 @@ function Body() {
       </Section>
       <Section>
         <Title>자주 묻는 질문</Title>
-
-        {FAQs.map((qna) => (
+        <MuiAccordion />
+        {FAQs.map((qna: qnatype) => (
           <div key={qna.id}>
             <Accordion title={qna.question} content={qna.answer} />
           </div>
