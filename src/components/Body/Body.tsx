@@ -19,10 +19,9 @@ function Body() {
       </Section>
       <Section>
         <Title>자주 묻는 질문</Title>
-        <MuiAccordion />
         {FAQs.map((qna: qnatype) => (
           <div key={qna.id}>
-            <Accordion title={qna.question} content={qna.answer} />
+            <MuiAccordion title={qna.question} content={qna.answer} />
           </div>
         ))}
       </Section>
