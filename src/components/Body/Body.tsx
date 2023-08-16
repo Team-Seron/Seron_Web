@@ -1,7 +1,6 @@
 import React from "react";
 import Intro from "./Intro";
 import { styled } from "styled-components";
-import Accordion from "./Accordion";
 import { FAQs } from "../../../public/data/FAQ";
 import MuiAccordion from "./MuiAccordion";
 
@@ -13,7 +12,7 @@ type qnatype = {
 
 function Body() {
   return (
-    <>
+    <Wrapper>
       <Section>
         <Intro />
       </Section>
@@ -25,9 +24,16 @@ function Body() {
           </div>
         ))}
       </Section>
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Title = styled.div`
   font-size: 44px;
@@ -38,7 +44,6 @@ const Title = styled.div`
 `;
 
 const Section = styled.section`
-  height: 500px;
   padding: 50px 142px;
   min-width: 300px;
   display: flex;

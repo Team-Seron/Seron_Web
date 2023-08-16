@@ -60,7 +60,12 @@ export default function CustomizedAccordions({ title, content }: Props) {
   return (
     <div>
       <Accordion
-        style={{ width: "90vw" }}
+        style={{
+          width: "80vw",
+          display: "flex",
+          flexDirection: "column",
+          marginBottom: "20px",
+        }}
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
