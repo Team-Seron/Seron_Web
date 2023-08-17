@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 name: Deploy to production server
 
 on:
@@ -21,27 +20,3 @@ jobs:
           docker stop peaceful_joliot || true
           docker rm peaceful_joliot || true
           docker run --name peaceful_joliot -d -p 443:3000 gunho30811/searon-web:latest
-=======
-name: Deploy to production server
-
-on:
-  repository_dispatch:
-    types: [deploy]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Execute remote SSH commands to deploy
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        key: ${{ secrets.REMOTE_KEY }}
-        script: |
-          docker pull gunho30811/searon-web:latest
-          docker stop peaceful_joliot || true
-          docker rm peaceful_joliot || true
-          docker run --name peaceful_joliot -d -p 443:3000 gunho30811/searon-web:latest
->>>>>>> 2311233f782c5251c94a4fa3de5970de965e3c02
