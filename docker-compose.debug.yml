@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: '3.4'
 
 services:
@@ -12,3 +13,19 @@ services:
       - 3000:3000
       - 9229:9229
     command: ["node", "--inspect=0.0.0.0:9229", "index.js"]
+=======
+version: '3.4'
+
+services:
+  searonweb:
+    image: searonweb
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+      - 9229:9229
+    command: ["node", "--inspect=0.0.0.0:9229", "index.js"]
+>>>>>>> 2311233f782c5251c94a4fa3de5970de965e3c02

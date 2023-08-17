@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Docker Image CI
 
 on:
@@ -30,3 +31,37 @@ jobs:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         repository: ${{ github.repository }}
         event-type: deploy
+=======
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+    
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag gunho30811/searon-web:latest
+
+    - name: Push the Docker image
+      run: docker push gunho30811/searon-web:latest
+
+    - name: Dispatch deploy event
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        repository: ${{ github.repository }}
+        event-type: deploy
+>>>>>>> 2311233f782c5251c94a4fa3de5970de965e3c02
