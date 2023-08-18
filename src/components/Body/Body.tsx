@@ -63,7 +63,7 @@ const ButtonWrapper = styled.div`
 const Button = styled.button`
   width: 150px;
   height: 50px;
-  border: 2px solid white;
+  border: 3px solid white;
   border-radius: 10px;
   font-size: 20px;
   font-weight: bold;
