@@ -5,17 +5,26 @@ function Footer() {
   return (
     <Wrapper>
       <Section>
-        <Title>Seron</Title>
-        <Menu />
-        <Icons>
+        <Top>
+          <Title>Seron</Title>
+          <Menu />
+        </Top>
+        <Bottom>
           <Instagram />
-        </Icons>
+        </Bottom>
       </Section>
     </Wrapper>
   );
 }
 
-const Icons = styled.div`
+const Section = styled.div`
+  height: 150px;
+  border-top: 1px solid gray;
+  bottom: 0;
+  padding: 20px 50px;
+`;
+
+const Bottom = styled.div`
   width: 100%;
   height: 50px;
   display: flex;
@@ -30,27 +39,24 @@ const Title = styled.div`
   font-weight: bold;
   color: black;
   font-family: "Noto Sans KR", sans-serif;
+  margin-right: 120px;
 `;
 
 const Wrapper = styled.div`
   width: 100%;
   height: auto;
   min-height: 100%;
+  background-color: aliceblue;
 `;
 
-const Section = styled.section`
-  width: 100%;
-  height: 150px;
-  border-top: 1px solid gray;
-  bottom: 0;
-  padding: 10px 20px;
+const Top = styled.section`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
+
   /* transform: translateY(-100%); */
-  background-color: aliceblue;
 `;
 
 export default Footer;
