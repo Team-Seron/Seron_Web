@@ -25,8 +25,8 @@ const Section = styled.div`
 `;
 
 const Bottom = styled.div`
-  width: 100%;
   height: 50px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -47,6 +47,7 @@ const Wrapper = styled.div`
   height: auto;
   min-height: 100%;
   background-color: aliceblue;
+  margin: 0 auto;
 `;
 
 const Top = styled.section`
