@@ -61,7 +61,7 @@ export default function CustomizedAccordions({ title, content }: Props) {
     <div>
       <Accordion
         style={{
-          width: "80vw",
+          width: "60vw",
           display: "flex",
           flexDirection: "column",
           marginBottom: "20px",

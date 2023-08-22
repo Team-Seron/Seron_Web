@@ -55,7 +55,7 @@ const Wrapper = styled.section`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 150px;
+  gap: 200px;
   svg {
     flex-shrink: 1;
     width: 360px;

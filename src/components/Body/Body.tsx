@@ -46,6 +46,19 @@ function Body() {
   );
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 150px;
+  height: auto;
+  min-height: 100%;
+  width: 75%;
+  margin: 0 auto;
+`;
+
 const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -53,7 +66,7 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   width: 100%;
   gap: 50px;
-
+  margin-top: 50px;
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 10px;
@@ -76,17 +89,6 @@ const Button = styled.button`
   }
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding-bottom: 150px;
-  height: auto;
-  min-height: 100%;
-`;
-
 const Title = styled.div`
   font-size: 44px;
   font-weight: bold;
@@ -96,7 +98,7 @@ const Title = styled.div`
 `;
 
 const Section = styled.section`
-  padding: 50px 142px;
+  /* padding: 50px 142px; */
   min-width: 300px;
   display: flex;
   flex-direction: column;
