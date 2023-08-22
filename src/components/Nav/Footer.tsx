@@ -1,37 +1,58 @@
 import { styled } from "styled-components";
 import Menu from "./Menu";
-import { Instagram } from "@mui/icons-material";
+import { GitHub, Instagram } from "@mui/icons-material";
+import SvgNotionLogo from "../../assets/svg/NotionLogo";
+import { SearonLogo } from "../../assets";
 function Footer() {
   return (
     <Wrapper>
       <Section>
         <Top>
           <Title>Seron</Title>
+
           <Menu />
         </Top>
         <Bottom>
-          <Instagram />
+          <Icon>
+            <Instagram
+              onClick={() => {
+                location.href = "https://www.instagram.com/seron_official/";
+              }}
+              fontSize="large"
+            />
+            <GitHub
+              onClick={() => {
+                location.href = "https://github.com/Team-Seron/Seron_Web";
+              }}
+              fontSize="large"
+            />
+            <SvgNotionLogo
+              onClick={() => {
+                location.href = "https://url.kr/y5plzk";
+              }}
+              width="35px"
+            />
+          </Icon>
+          <p>Copy</p>
         </Bottom>
       </Section>
     </Wrapper>
   );
 }
 
-const Section = styled.div`
-  height: 150px;
-  border-top: 1px solid gray;
-  bottom: 0;
-  padding: 20px 50px;
+const Wrapper = styled.div`
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  margin: 0 auto;
 `;
 
-const Bottom = styled.div`
-  height: 50px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  position: relative;
+const Section = styled.div`
+  height: 150px;
+  border-top: 1px solid #f0f0f0;
+  bottom: 0;
+  padding: 20px 50px;
+  background-color: beige;
 `;
 
 const Title = styled.div`
@@ -42,22 +63,34 @@ const Title = styled.div`
   margin-right: 120px;
 `;
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-  background-color: aliceblue;
-  margin: 0 auto;
-`;
-
 const Top = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  background-color: azure;
+`;
 
-  /* transform: translateY(-100%); */
+const Bottom = styled.div`
+  height: 50px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: aliceblue;
+`;
+
+const Icon = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  background-color: bisque;
+  gap: 20px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default Footer;
