@@ -6,9 +6,7 @@ import Footer from "../components/Nav/Footer";
 function MainPage() {
   return (
     <>
-      <Nav />
       <Body />
-      <Footer />
     </>
   );
 }
