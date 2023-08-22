@@ -33,7 +33,6 @@ function Footer() {
               width="35px"
             />
           </Icon>
-          <p>Copy</p>
         </Bottom>
       </Section>
     </Wrapper>
@@ -52,7 +51,6 @@ const Section = styled.div`
   border-top: 1px solid #f0f0f0;
   bottom: 0;
   padding: 20px 50px;
-  background-color: beige;
 `;
 
 const Title = styled.div`
@@ -69,7 +67,6 @@ const Top = styled.section`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background-color: azure;
 `;
 
 const Bottom = styled.div`
@@ -78,7 +75,6 @@ const Bottom = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: aliceblue;
 `;
 
 const Icon = styled.div`
@@ -86,7 +82,6 @@ const Icon = styled.div`
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  background-color: bisque;
   gap: 20px;
   &:hover {
     cursor: pointer;
