@@ -28,6 +28,16 @@ const NavWrapper = styled.div`
   gap: 50vw;
   justify-content: center;
   border-bottom: 1px solid #e5e5e5;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    flex-direction: column;
+    height: fit-content;
+    padding-bottom: 5%;
+  }
 `;
 
 const Icon = styled.div`
@@ -36,6 +46,13 @@ const Icon = styled.div`
     width: 52px;
     height: 52px;
     cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    svg {
+      width: 90px;
+      height: 90px;
+      padding-top: 15%;
+    }
   }
 `;
 

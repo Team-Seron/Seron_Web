@@ -46,6 +46,15 @@ const SubTitle = styled.span`
 const Title = styled.span`
   font-size: 56px;
   font-weight: bold;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    svg {
+      width: 50vw;
+    }
+  }
 `;
 
 const Wrapper = styled.section`
@@ -64,10 +73,12 @@ const Wrapper = styled.section`
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 10px;
-    margin: 50px 150px;
-
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     svg {
-      width: 360px;
+      width: 50vw;
     }
   }
 `;

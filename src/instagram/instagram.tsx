@@ -39,22 +39,22 @@ export const Instagram = () => {
     const data = response.data.data;
     console.log("data", data);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    const dataId: any = data.map(
-      (element: InstagramContent) => (
-        console.log("element", element),
-        (
-          <li key={element.id}>
-            <p>{element.caption}</p>
-            <img src={element.media_url} alt="instagram" />
-          </li>
-        )
-      )
-    );
-    return (
-      <div>
-        <ul>{dataId}</ul>
-      </div>
-    );
+    // const dataId: any = data.map(
+    //   (element: InstagramContent) =>
+    //     console.log("element", element)
+    // (
+    // <li key={element.id}>
+    //   <p>{element.caption}</p>
+    //   <img src={element.media_url} alt="instagram" />
+    // </li>
+    // )
+
+    // );
+    // return (
+    //   <div>
+    //     <ul>{dataId}</ul>
+    //   </div>
+    // );
     // data.foreach((element) => console.log(element.id));
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   };

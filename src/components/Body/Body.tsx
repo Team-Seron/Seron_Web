@@ -24,9 +24,7 @@ function Body() {
           </div>
         ))}
       </Section>
-      <Section>
-        <Instagram />
-      </Section>
+      <Section>{/* <Instagram /> */}</Section>
       <ButtonWrapper>
         <Button
           type="button"
@@ -54,7 +52,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
   padding-bottom: 150px;
   height: auto;
   min-height: 100%;
@@ -107,6 +105,17 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      /* width: 360px; */
+    }
+  }
 `;
 
 export default Body;
