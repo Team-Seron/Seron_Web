@@ -13,7 +13,7 @@ function Accordion({ title, content }: Props) {
   const [isCollapse, setIsCollapse] = useState(false);
 
   const handleButtonClick = useCallback(
-    (event) => {
+    (event: React.MouseEvent) => {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
       event.stopPropagation();
       if (parentRef.current === null || childRef.current === null) {
