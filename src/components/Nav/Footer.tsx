@@ -50,6 +50,12 @@ const Section = styled.div`
   border-top: 1px solid #f0f0f0;
   bottom: 0;
   padding: 20px 50px;
+
+  
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+  
 `;
 
 const Title = styled.div`
@@ -57,7 +63,7 @@ const Title = styled.div`
   font-weight: bold;
   color: black;
   font-family: "Noto Sans KR", sans-serif;
-  margin-right: 120px;
+  /* margin-right: 120px; */
 `;
 
 const Top = styled.section`
@@ -66,6 +72,15 @@ const Top = styled.section`
   justify-content: space-between;
   align-items: center;
   position: relative;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    /* margin: 50px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 const Bottom = styled.div`

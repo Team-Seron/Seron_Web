@@ -108,7 +108,7 @@ const Section = styled.section`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    margin: 50px;
+    margin: 50px, 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,4 +119,4 @@ const Section = styled.section`
 `;
 
 export default Body;
-g
+
