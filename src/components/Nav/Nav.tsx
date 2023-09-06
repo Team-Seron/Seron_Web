@@ -25,7 +25,7 @@ const NavWrapper = styled.div`
   font-family: pretendard;
   display: flex;
   align-items: center;
-  gap: 650px;
+  gap: 50vw;
   justify-content: center;
   border-bottom: 1px solid #e5e5e5;
 `;

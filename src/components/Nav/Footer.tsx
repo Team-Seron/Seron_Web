@@ -9,7 +9,6 @@ function Footer() {
       <Section>
         <Top>
           <Title>Seron</Title>
-
           <Menu />
         </Top>
         <Bottom>

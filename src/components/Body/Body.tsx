@@ -1,8 +1,8 @@
-import React from "react";
 import Intro from "./Intro";
 import { styled } from "styled-components";
 import { FAQs } from "../../../public/data/FAQ";
 import MuiAccordion from "./MuiAccordion";
+import { Instagram } from "../../instagram/instagram";
 
 type qnatype = {
   id: number;
@@ -23,6 +23,9 @@ function Body() {
             <MuiAccordion title={qna.question} content={qna.answer} />
           </div>
         ))}
+      </Section>
+      <Section>
+        <Instagram />
       </Section>
       <ButtonWrapper>
         <Button

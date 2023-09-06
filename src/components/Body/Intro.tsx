@@ -60,6 +60,16 @@ const Wrapper = styled.section`
     flex-shrink: 1;
     width: 360px;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px 150px;
+
+    svg {
+      width: 360px;
+    }
+  }
 `;
 
 const Button = styled.button`
