@@ -1,8 +1,8 @@
-import React from "react";
 import Intro from "./Intro";
 import { styled } from "styled-components";
 import { FAQs } from "../../../public/data/FAQ";
 import MuiAccordion from "./MuiAccordion";
+import { Instagram } from "../../instagram/instagram";
 
 type qnatype = {
   id: number;
@@ -24,6 +24,7 @@ function Body() {
           </div>
         ))}
       </Section>
+      <Section>{/* <Instagram /> */}</Section>
       <ButtonWrapper>
         <Button
           type="button"
@@ -51,7 +52,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
   padding-bottom: 150px;
   height: auto;
   min-height: 100%;
@@ -67,7 +68,7 @@ const ButtonWrapper = styled.div`
   width: 100%;
   gap: 50px;
   margin-top: 50px;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
     gap: 10px;
   }
@@ -104,6 +105,17 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    margin: 50px, 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      /* width: 360px; */
+    }
+  }
 `;
 
 export default Body;

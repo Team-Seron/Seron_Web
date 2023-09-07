@@ -15,13 +15,15 @@ function Menu() {
 
 const Menus = styled.div`
   display: flex;
-  gap: 36px;
+  gap: 10%;
   align-items: center;
+  white-space: normal;
 `;
 
 const Category = styled.div`
   font-size: 16px;
   font-weight: 500;
+
   color: #000000;
   cursor: pointer;
   min-width: fit-content;
