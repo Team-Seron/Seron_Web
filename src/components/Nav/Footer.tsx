@@ -51,11 +51,9 @@ const Section = styled.div`
   bottom: 0;
   padding: 20px 50px;
 
-  
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     padding: 20px;
   }
-  
 `;
 
 const Title = styled.div`
@@ -73,7 +71,7 @@ const Top = styled.section`
   align-items: center;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
     gap: 10px;
     /* margin: 50px; */

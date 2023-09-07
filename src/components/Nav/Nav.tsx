@@ -29,7 +29,7 @@ const NavWrapper = styled.div`
   justify-content: center;
   border-bottom: 1px solid #e5e5e5;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     gap: 10px;
     align-items: center;
     justify-content: center;
@@ -47,7 +47,7 @@ const Icon = styled.div`
     height: 52px;
     cursor: pointer;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     svg {
       width: 90px;
       height: 90px;

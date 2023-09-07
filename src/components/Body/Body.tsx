@@ -68,7 +68,7 @@ const ButtonWrapper = styled.div`
   width: 100%;
   gap: 50px;
   margin-top: 50px;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
     gap: 10px;
   }
@@ -106,7 +106,7 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
     margin: 50px, 0;
     display: flex;
@@ -119,4 +119,3 @@ const Section = styled.section`
 `;
 
 export default Body;
-
