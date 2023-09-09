@@ -6,6 +6,14 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   server: {
     port: 3000,
+    proxy: {
+      "/v1": {
+        target: "https://api.notion.com/v1",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/v1/, ''),
+        secure: false
+      }
+    }
   },
   plugins: [
     react(),
