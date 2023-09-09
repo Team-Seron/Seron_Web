@@ -3,19 +3,22 @@ import * as S from "../Style";
 import { Card, CardActionArea, CardContent, CardMedia, Grid, Pagination } from "@mui/material";
 import { styled } from "styled-components";
 import useOnclickOutside from "react-cool-onclickoutside";
-import { Link, useFetcher } from "react-router-dom";
+import axios from "axios";
+import "react-notion/src/styles.css";
+import { NotionRenderer } from "react-notion";
 
 function PicturePage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [data, setData] = useState();
-  const [url, setUrl] = useState();
+  const [id, setId] = useState();
+  const [title, setTitle] = useState("");
   const [page, setPage] = useState(1);
   
   useEffect(() => {
     fetch(`v1/databases/bcf3ad2776a94af886ba97d3e465d7bf/query`, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
+      Authorization: `Bearer ${import.meta.env.VITE_NOTION_KEY}`,
       "Notion-Version": "2022-06-28",
       "Content-Type": "application/json",
     },
@@ -24,9 +27,10 @@ function PicturePage() {
   .catch(err => console.log(err))
   }, []);
 
-  const handleCard = (urlData) => {
+  const handleCard = (pageId, title) => {
     setModalOpen(true);
-    setUrl(urlData);
+    setId(pageId);
+    setTitle(title);
   }
 
   const handlePagination = (e: React.ChangeEvent<unknown>, value: number) => {
@@ -35,7 +39,7 @@ function PicturePage() {
 
   return (
     <S.Body>
-      {modalOpen && <PictureModal url={url} onClose={() => setModalOpen(false)} />}
+      {modalOpen && <PictureModal id={id} title={title} onClose={() => setModalOpen(false)} />}
       <div>
         <div style={{ margin: '50px'}}>
           <div style={{ display: 'flex', justifyContent: 'center'}}>
@@ -46,7 +50,7 @@ function PicturePage() {
               {data?.results.slice((page-1)*9, page*9).map((result) => (
                 <Grid item xs={4} key={result.id}>
                   <Card sx={{ maxWidth: '369px' }} variant="outlined" >
-                    <CardActionArea onClick={() => handleCard(result.public_url)}>
+                    <CardActionArea onClick={() => handleCard(result.id, result.properties.Name.title[0]?.plain_text)}>
                       <CardMedia 
                         component="img"
                         height="194"
@@ -71,12 +75,24 @@ function PicturePage() {
 
 export default PicturePage;
 
+interface PictureModalProps {
+  onClose: () => void;
+  id: string;
+  title: string;
+}
 
 const PictureModal = ({
   onClose,
-  url
-}) => {
+  id,
+  title
+}: PictureModalProps) => {
   const ref = useOnclickOutside(onClose);
+  const [pageDatas, setPageDatas] = useState({});
+
+  useEffect(() => {
+    void axios.get(`https://notion-api.splitbee.io/v1/page/${id}`)
+      .then(res => setPageDatas(res.data));
+  }, [id])
 
   return(
     <ModalWrapper>
@@ -91,6 +107,8 @@ const PictureModal = ({
             />
           </CloseModal>
         </Header>
+        <h1>{title}</h1>
+        <NotionRenderer blockMap={pageDatas} fullPage={false}/>
       </Modals>
     </ModalWrapper>
   )
@@ -107,16 +125,19 @@ background-color: #00000023;
 justify-content: center;
 display: flex;
 z-index: 1;
+::-webkit-scrollbar {
+  display: none;
+} 
 `;
 
 const Modals = styled.div`
 position: relative;
-width: 540px;
-height: 340px;
+width: 40%;
+height: 80%;
 box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
   0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
 background-color: white;
-overflow: hidden;
+overflow-y: scroll;
 border-radius: 8px;
 transition: all 400ms ease-in-out 2s;
 animation: fadeIn 400ms;
