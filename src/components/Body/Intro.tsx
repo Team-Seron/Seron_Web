@@ -12,14 +12,22 @@ function Intro() {
     <Wrapper>
       <Banner>
         <Title>
-          <span style={{ fontSize: "28px" }}>
-            <span style={{ fontSize: "58px" }}>세론</span>
+          <StyledSpan>
+            <StyledSpan
+              style={{
+                fontSize: "58px",
+              }}
+            >
+              세론
+            </StyledSpan>
             <br />
             세상에 대해 이야기 하는 곳
-          </span>
+          </StyledSpan>
         </Title>
         <SubTitle>
-          <b>세론</b>은 <b>대학생</b>이라면 누구나 <br />
+          <span>
+            <b>세론</b>은 <b>대학생</b>이라면 누구나 <br />
+          </span>
           참여할 수 있는 <b>연합 동아리</b> 입니다.
         </SubTitle>
         <Button onClick={handleOpen}>10기 모집 알림 신청</Button>
@@ -30,22 +38,53 @@ function Intro() {
   );
 }
 
+const StyledSpan = styled.span`
+  font-size: 28px;
+  @media (max-width: 1000px) {
+    font-size: 20px;
+    align-items: center;
+    text-align: center;
+  }
+`;
+
 const Banner = styled.div`
   display: flex;
   flex-direction: column;
   flex-shrink: 1;
   margin-bottom: 50px;
   white-space: nowrap;
+  @media (max-width: 1000px) {
+    align-items: center;
+    svg {
+      width: 50vw;
+    }
+  }
 `;
 
 const SubTitle = styled.span`
   font-size: 20px;
   margin: 20px 0;
+  @media (max-width: 1000px) {
+    text-align: center;
+    svg {
+      width: 50vw;
+    }
+  }
 `;
 
 const Title = styled.span`
   font-size: 56px;
   font-weight: bold;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    svg {
+      width: 50vw;
+    }
+  }
 `;
 
 const Wrapper = styled.section`
@@ -59,6 +98,18 @@ const Wrapper = styled.section`
   svg {
     flex-shrink: 1;
     width: 360px;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 50vw;
+    }
   }
 `;
 

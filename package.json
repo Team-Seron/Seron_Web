@@ -17,13 +17,16 @@
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.4",
     "@types/styled-components": "^5.1.26",
+    "@vitejs/plugin-react": "^4.0.1",
     "@vitejs/plugin-react-swc": "^3.3.2",
+    "axios": "^1.5.0",
     "local-ssl-proxy": "^2.0.5",
     "react": "^18.2.0",
     "react-cool-onclickoutside": "^1.7.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.2",
     "react-icons": "^4.10.1",
+    "react-notion": "^0.10.0",
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.14.2",
     "redux": "^4.2.1",
@@ -31,8 +34,7 @@
     "serve": "^14.2.0",
     "styled-components": "^6.0.5",
     "vite-plugin-svgr": "^3.2.0",
-    "vite-tsconfig-paths": "^4.2.0",
-    "@vitejs/plugin-react": "^4.0.1"
+    "vite-tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

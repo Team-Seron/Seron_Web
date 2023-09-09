@@ -16,6 +16,7 @@ dist-ssr
 
 # Local configuration files
 *.local
+*.env
 
 # Lock files (If you want to ignore them)
 package-lock.json
