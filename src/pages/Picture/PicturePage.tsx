@@ -9,7 +9,7 @@ import { NotionRenderer } from "react-notion";
 
 function PicturePage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [data, setData] = useState();
+  const [data, setData] = useState({ results: [] });
   const [id, setId] = useState();
   const [title, setTitle] = useState("");
   const [page, setPage] = useState(1);
@@ -47,7 +47,7 @@ function PicturePage() {
           </div>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Grid container spacing={2} style={{ maxWidth: '1084px' }}>
-              {data?.results.slice((page-1)*9, page*9).map((result) => (
+              {data && data.results.slice((page-1)*9, page*9).map((result) => (
                 <Grid item xs={4} key={result.id}>
                   <Card sx={{ maxWidth: '369px' }} variant="outlined" >
                     <CardActionArea onClick={() => handleCard(result.id, result.properties.Name.title[0]?.plain_text)}>
@@ -66,7 +66,7 @@ function PicturePage() {
               ))}
             </Grid>
           </div>
-          <Pagination count={Math.ceil(data?.results.length/9)} page={page} shape="rounded" onChange={handlePagination} sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px'}} />
+          <Pagination count={Math.ceil((data && data?.results.length/9))} page={page} shape="rounded" onChange={handlePagination} sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px'}} />
         </div>
       </div>
     </S.Body>
