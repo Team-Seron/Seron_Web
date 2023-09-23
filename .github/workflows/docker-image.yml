@@ -24,6 +24,9 @@ jobs:
     
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag gunho30811/searon-web:latest
+    
+    - name: Check .env content
+      run: cat .env
 
     - name: Push the Docker image
       run: docker push gunho30811/searon-web:latest
