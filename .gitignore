@@ -20,7 +20,6 @@ dist-ssr
 
 # Lock files (If you want to ignore them)
 package-lock.json
-yarn.lock
 
 # Editor directories and files
 .vscode/*

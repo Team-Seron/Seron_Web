@@ -9,7 +9,7 @@
 # RUN chown -R node /usr/src/app
 # USER node
 # CMD ["npm", "start"]
-FROM node:lts-alpine
+FROM node:19.0.1-alpine
 
 # Yarn 설치
 RUN apk add --no-cache yarn
