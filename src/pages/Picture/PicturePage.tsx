@@ -23,7 +23,9 @@ function PicturePage() {
       "Content-Type": "application/json",
     },
   }).then(res => res.json())
-  .then(data => setData(data))
+  .then(data => {console.log("API response:" , data);
+    setData(data);
+  })
   .catch(err => console.log(err))
   }, []);
 
