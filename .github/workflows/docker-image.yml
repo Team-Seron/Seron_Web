@@ -6,8 +6,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
+    env:
+      DOCKER_BUILDKIT: 1
 
     steps:
     - uses: actions/checkout@v2
@@ -22,8 +24,16 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
     
+    - name: Pull the Docker image for caching
+      run: docker pull gunho30811/searon-web:latest || true
+    
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag gunho30811/searon-web:latest
+      run: |
+        docker build . \
+        --file Dockerfile \
+        --build-arg BUILDKIT_INLINE_CACHE=1 \
+        --cache-from=gunho30811/searon-web:latest \
+        --tag gunho30811/searon-web:latest
     
     - name: Check .env content
       run: cat .env
